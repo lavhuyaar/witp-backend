@@ -1,4 +1,5 @@
-/* MODELS
+import { PrismaClient } from '@prisma/client';
 
-DB Setup
-*/
+const db = new PrismaClient();
+
+export default db;

@@ -1,4 +1,0 @@
-/* VALIDATORS
-
-Delete this file later
-*/

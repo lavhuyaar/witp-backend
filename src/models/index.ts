@@ -1,4 +1,0 @@
-/* MODELS
-
-Delete this file later
-*/
