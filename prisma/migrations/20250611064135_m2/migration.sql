@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Pokemon" ALTER COLUMN "name" SET DATA TYPE VARCHAR(50);
+
+-- AlterTable
+ALTER TABLE "User" ALTER COLUMN "name" SET DATA TYPE VARCHAR(30);

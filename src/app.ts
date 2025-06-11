@@ -5,6 +5,8 @@ import errorHandler from './middlewares/errorHandler';
 import routes from './routes/routes';
 
 const app = express();
+app.use(express.urlencoded());
+app.use(express.json());
 
 const allowedLists: (string | undefined)[] = ['http://localhost:5173']; //Add allowed lists
 

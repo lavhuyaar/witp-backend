@@ -9,18 +9,18 @@ datasource db {
 
 model User {
   id        String   @id @default(uuid())
-  name      String   @unique @db.Char(30)
-  timeTook  String
+  name      String  @db.VarChar(30)
+  timeTook  Int
   createdAt DateTime @default(now())
 }
 
 model Pokemon {
   id              String   @id @default(uuid())
-  name            String   @unique @db.Char(50)
+  name            String   @unique @db.VarChar(50)
   image           String
-  PositionXLeft   String
-  PositionXRight  String
-  PositionYTop    String
-  PositionYBottom String
+  PositionXLeft   Int
+  PositionXRight  Int
+  PositionYTop    Int
+  PositionYBottom Int
   createdAt       DateTime @default(now())
 }
