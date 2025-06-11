@@ -6,3 +6,21 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id        String   @id @default(uuid())
+  name      String   @unique @db.Char(30)
+  timeTook  String
+  createdAt DateTime @default(now())
+}
+
+model Pokemon {
+  id              String   @id @default(uuid())
+  name            String   @unique @db.Char(50)
+  image           String
+  PositionXLeft   String
+  PositionXRight  String
+  PositionYTop    String
+  PositionYBottom String
+  createdAt       DateTime @default(now())
+}
