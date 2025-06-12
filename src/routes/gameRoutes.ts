@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import { getPokemons } from '../controllers/gameController';
+import { addPokemon, allPokemons } from '../controllers/gameController';
 
 const gameRoutes = Router();
 
-gameRoutes.get('/pokemons', getPokemons);
+gameRoutes.get('/pokemons', allPokemons);
+gameRoutes.post('/pokemon/new', addPokemon);
 
 export default gameRoutes;
