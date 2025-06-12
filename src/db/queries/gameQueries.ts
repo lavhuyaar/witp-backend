@@ -28,3 +28,13 @@ export const createNewPokemon = async (
 
   return pokemon;
 };
+
+export const getPokemonById = async (id: string) => {
+  const pokemon = await db.pokemon.findFirst({
+    where: {
+      id,
+    },
+  });
+
+  return pokemon;
+};
