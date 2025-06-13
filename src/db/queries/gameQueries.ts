@@ -3,6 +3,11 @@ import db from '../db';
 export const getPokemons = async () => {
   const pokemons = await db.pokemon.findMany({
     take: 5,
+    select: {
+      id: true,
+      name: true,
+      image: true,
+    },
   });
   return pokemons;
 };
