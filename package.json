@@ -39,8 +39,10 @@
   },
   "scripts": {
     "build": "tsc",
+    "seed": "ts-node src/scripts/seed.ts",
     "start": "node dist/server.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server.ts",
+    "postinstall": "node dist/scripts/seed.js",
     "lint": "eslint 'src/**/*.ts'",
     "test": "jest"
   },
