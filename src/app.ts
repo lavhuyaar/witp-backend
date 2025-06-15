@@ -8,7 +8,9 @@ const app = express();
 app.use(express.urlencoded());
 app.use(express.json());
 
-const allowedLists: (string | undefined)[] = ['http://localhost:5173']; //Add allowed lists
+const allowedLists: (string | undefined)[] = [
+  'https://where-is-that-pokemon.vercel.app',
+]; //Add allowed lists
 
 const corsOptionsDelegate = (req: Request, callback: Function) => {
   let corsOptions;
