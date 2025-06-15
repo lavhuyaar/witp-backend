@@ -13,7 +13,7 @@ export const addUser = async (name: string, score: number) => {
 
 export const getUsersData = async () => {
   const users = await db.user.findMany({
-    orderBy: { timeTook: 'desc' },
+    orderBy: { timeTook: 'asc' },
     take: 25,
     select: {
       name: true,

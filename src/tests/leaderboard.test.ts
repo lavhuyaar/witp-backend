@@ -1,5 +1,8 @@
 import request from 'supertest';
 import app from '../app';
+import db from '../db/db';
+
+const mockedUsername: string = `${Date.now()}`;
 
 describe('GET /leaderboard', () => {
   it('should get the top 25 leaderboard scores', async () => {
@@ -14,11 +17,11 @@ describe('POST /leaderboard', () => {
   it('should create a new user and score in leaderboard', async () => {
     const res = await request(app)
       .post('/leaderboard')
-      .send({ name: 'Test User', timeTook: 140 })
+      .send({ name: mockedUsername, timeTook: 140 })
       .set('Accept', 'application/json');
 
     expect(res.status).toEqual(201);
-    expect(res.body.user.name).toEqual('Test User');
+    expect(res.body.user.name).toEqual(mockedUsername);
     expect(res.body.user.timeTook).toEqual(140);
   });
 
@@ -35,7 +38,7 @@ describe('POST /leaderboard', () => {
   it('should return 400 error if time took is missing', async () => {
     const res = await request(app)
       .post('/leaderboard')
-      .send({ name: 'Test User' })
+      .send({ name: mockedUsername })
       .set('Accept', 'application/json');
 
     expect(res.status).toBe(400);
@@ -45,10 +48,18 @@ describe('POST /leaderboard', () => {
   it('should return 400 error if time took is 0', async () => {
     const res = await request(app)
       .post('/leaderboard')
-      .send({ name: 'Test User', timeTook: 0 })
+      .send({ name: mockedUsername, timeTook: 0 })
       .set('Accept', 'application/json');
 
     expect(res.status).toBe(400);
     expect(res.body.user).toBeUndefined();
+  });
+
+  afterAll(async () => {
+    await db.user.deleteMany({
+      where: {
+        name: mockedUsername,
+      },
+    });
   });
 });
