@@ -39,10 +39,11 @@
   },
   "scripts": {
     "build": "tsc",
+    "generate": "prisma generate",
     "seed": "ts-node src/scripts/seed.ts",
     "start": "node dist/server.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server.ts",
-    "postinstall": "npm run build && node dist/scripts/seed.js",
+    "postinstall": "npm run generate && npm run build && npm run seed",
     "lint": "eslint 'src/**/*.ts'",
     "test": "jest"
   },
