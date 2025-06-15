@@ -44,7 +44,7 @@
     "seed": "ts-node src/scripts/seed.ts",
     "start": "node dist/server.js",
     "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server.ts",
-    "postinstall": "npx prisma generate && npm run build && npm run seed",
+    "postinstall": "npx prisma generate && npx prisma migrate deploy && npm run build && npm run seed",
     "lint": "eslint 'src/**/*.ts'",
     "test": "jest"
   },
