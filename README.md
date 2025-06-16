@@ -1,52 +1,22 @@
-# Express TS Template
+# Where Is That Pokemon - Backend
 
-This is a beginner-friendly, already set up ExpressJS (v5) template with TypeScript, CORS, a formatted folder structure, and scripts.
-
-The scripts configured make both development and production easy.
-
-I've also added an `errorHandler` middleware, which prevents the server from crashing when there occurs some error.
-(There is no need for `asyncHandler` or some similar error-handling middleware as Express (in v5) does it on it's own).
+This is the backend repository of my project - Where Is That Pokemon?, which is a game to find the list of five Pokemons in an image as quickly as possible. The game is similar to the famous "Where's Waldo?" game.
 
 ---
 
-## Steps to use the template:
+## Tools used :
 
-**Step 1:** Fork this repository (duh) and use this template in any of your personal projects while creating it.
-
-**Step 2:** Install all the packages by running:
-
-`$ npm install`
-
-**Step 3 (Optional but preferred):** Create a `.env` file in your root folder and add the specific environmental variables.
-
-**Step 4:** You're good to go! Yup, it was this simple hehe.
+- Express (deployed on Render)
+- Typescript
+- PostgreSQL (deployed on Neon Console)
+- Prisma ORM
+- Jest
+- Supertest
 
 ---
 
-## Scripts
+I liked this project, not very complicated, but did learn stuff like testing, (I used to think testing is of no use until I wrote tests for this project, they were super helpful).
 
-- During development, run `$ npm run dev`.
-- During production, run `$ npm run build && npm start`.
+The deployment part was messy as I'm using Typescript. I think I have to use Docker in some way to ensure that only transpiled files are deployed. I liked the seeding part, did for the first time XD
 
----
-
-## The following packages are pre-installed:
-
-- TypeScript
-- ExpressJS
-- JSON Web Token
-- BcrpytJS
-- Express-validator
-- Nodemon
-- Prettier
-- ESLint
-- CORS
-- Dotenv
-
----
-
-Do star the repo if you liked this template, and let me know if there is any way this template can be improved.
-
-I've deliberately not installed any database; that's for the user to decide.
-
-Of course there is no need to give me any credits. Use it as you please :)
+Overall good work Lav, before starting this project it seemed like hard but it was easy lol. (16-06-2025)
